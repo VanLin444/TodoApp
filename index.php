@@ -10,14 +10,33 @@
 <body>
     <div class="wrapper">
         <div class="field-input">
-            <input type="text" size=auto placeholder="Add task...">
-            <button><i class="bi bi-plus-lg" style="font-size: 20px;"></i></button>
+            <input id="taskTxt" type="text" size=auto placeholder="Add task...">
+            <button class="addTaskBtn"><i class="bi bi-plus-lg" style="font-size: 20px;"></i></button>
         </div>
         
+        <div class="field-tab">
+            <!-- Ссылки вкладки -->
+            <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Лондон</button>
+                <button class="tablinks" onclick="openCity(event, 'Paris')">Париж</button>
+            </div>
+
+            <!-- Содержимое вкладки -->
+            <div id="London" class="tabcontent">
+                <h3>Лондон</h3>
+                <p>Лондон является столицей Англии.</p>
+            </div>
+
+            <div id="Paris" class="tabcontent">
+                <h3>Париж</h3>
+                <p>Париж является столицей Франции.</p>
+            </div>
+        </div>
     </div>
 
     <script src="./js/tab.js"></script>
-
+    <script src="./js/addtask.js"></script>
+</body>
 </html>
 
 <!DOCTYPE html>

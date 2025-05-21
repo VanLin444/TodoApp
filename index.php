@@ -20,18 +20,18 @@
         <div class="field-tab">
             <!-- Ссылки вкладки -->
             <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Лондон</button>
-                <button class="tablinks" onclick="openCity(event, 'Paris')">Париж</button>
+                <button class="tablinks" onclick="openCity(event, 'Pending')" id="defaultOpen">Pending</button>
+                <button class="tablinks" onclick="openCity(event, 'Completed')">Completed</button>
             </div>
 
             <!-- Содержимое вкладки -->
-            <div id="London" class="tabcontent">
-                <h3>Лондон</h3>
+            <div id="Pending" class="tabcontent">
+                <h3>В процессе</h3>
                 <p>Лондон является столицей Англии.</p>
             </div>
 
-            <div id="Paris" class="tabcontent">
-                <h3>Париж</h3>
+            <div id="Completed" class="tabcontent">
+                <h3>Законченные</h3>
                 <p>Париж является столицей Франции.</p>
             </div>
         </div>

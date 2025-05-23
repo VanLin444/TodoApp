@@ -7,8 +7,12 @@ body {
     justify-content: center;
 }
 .wrapper {
+    width: 500px;
+    height: 600px;
     background-color: #ffffff;
     padding-bottom: 0px;
+    border-radius: 7px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
 }
 
 .logo {
@@ -17,7 +21,7 @@ body {
 h1, h4 {
     text-align:center;
     /* Проверка границ */
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 h1 {
@@ -27,14 +31,36 @@ h1 {
 h4 {
     margin-bottom: 0.5em;
 }
-/* Style the tab */
+
+.field-input {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.5em;
+}
+
+.field-input input {
+    width: 80%;
+    height: 35px;
+}
+
+.field-input button {
+    width: 15%;
+    border-radius: 0px 4px 4px 0px;
+    border-color: lightgray;
+}
+
+.field-tab {
+    background-color: purple;
+    height: 50vh;
+}
+
 .tab-links {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
 }
-  /* Style the buttons that are used to open the tab content */
-.tab button {
+
+.tab-links button {
     background-color: inherit;
     float: left;
     border: none;
@@ -44,20 +70,30 @@ h4 {
     transition: 0.3s;
 }
 
-  /* Change background color of buttons on hover */
-.tab button:hover {
+.tab-links button:hover {
     background-color: #ddd;
 }
 
-  /* Create an active/current tablink class */
-.tab button.active {
+.tab-links button.active {
     background-color: #ccc;
 }
 
-  /* Style the tab content */
 .tabcontent {
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
+    border-radius: 0 0 7px 7px;
     border-top: none;
+    animation: fadeEffect 1s;
+    background-color: red;
+    height:40vh
+}
+
+.tabcontent p {
+    overflow-wrap: break-word;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }

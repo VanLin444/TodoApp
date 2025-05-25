@@ -25,8 +25,12 @@
             </div>
             <div class="tab-content">
                 <div id="All" class="tabcontent">
-                    <h3>London</h3>
-                    <p>London is the capital city of England.</p>
+                    <?php include_once "./php/data.php";?>
+                    <?php for ($i = 0; $i < 40; $i++): ?>
+                    <div class="content">
+                        <?php echo $data . '<br>';?>
+                    </div>
+                    <?php endfor;?>
                 </div>
 
                 <div id="Active" class="tabcontent">

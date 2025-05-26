@@ -10,17 +10,28 @@ body {
     width: 500px;
     height: 600px;
     background-color: #ffffff;
-    padding-bottom: 0px;
+    padding-bottom: 2vh;
     border-radius: 7px;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+}
+
+.logo {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    box-sizing:border-box;
+    margin-bottom: 1vh;
+}
+
+.logo img{
+    width: 20%;
 }
 
 h1, h4 {
     text-align:center;
-    /* Проверка границ */
-    /*border: 1px solid red;*/
 }
 
 h1 {
@@ -40,12 +51,6 @@ h4 {
 .field-input input {
     width: 80%;
     height: 35px;
-}
-
-.field-input button {
-    width: 15%;
-    border-radius: 0px 4px 4px 0px;
-    border-color: lightgray;
 }
 
 .field-tab {
@@ -81,12 +86,12 @@ h4 {
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
-    border-radius: 0 0 7px 7px;
     border-top: none;
     animation: fadeEffect 1s;
     overflow: scroll;
     box-sizing: border-box;
-    max-height: 26em;
+    max-height: 25em;
+    border: none;
 }
 
 .tabcontent::-webkit-scrollbar {
@@ -101,6 +106,51 @@ h4 {
 @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+.task {
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    background-color:#f1f1f1;
+    margin-bottom: 1vh;
+    align-items: center;
+}
+
+.task p {
+    width: 75%;
+    margin-left: 10px;
+    padding: none;
+}
+
+.taskbtn {
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+}
+
+.deletebtn, .changebtn, .addTaskBtn {
+    background: none; 
+    border: none;     
+    padding: 0;       
+    cursor: pointer;
+}
+
+.addTaskBtn img{
+    width: 65%;
+    object-fit: cover;  
+    height: auto;
+}
+
+.addTaskBtn:active {
+    transform: scale(0.95);
+}
+
+.chkbox {
+    accent-color: green;
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
 }
 
 @media(max-width:500px){

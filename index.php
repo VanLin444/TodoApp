@@ -10,12 +10,15 @@
 <body>
     <div class="wrapper">
         <div class="logo">
-            <h1>ToDoApp</h1>
-            <h4>"Today we do this!"</h4>
+            <img src="logo.png" alt="">
+            <div>
+                <h1>ToDoApp</h1>
+                <h4>"Today we do this!"</h4>
+            </div>
         </div>
         <div class="field-input">
             <input type="text" id="taskTxt" placeholder="Add task...">
-            <button id="addTaskBtn">+</button>
+            <button id="addTaskBtn" class="addTaskBtn"><img src="add.png" alt="Добавить задачу"></button>
         </div>
         <div class="field-tab">
             <div class="tab-links">
@@ -28,7 +31,7 @@
                     <?php include_once "./php/data.php";?>
                     <?php for ($i = 0; $i < 40; $i++): ?>
                     <div class="content">
-                        <?php echo $data . '<br>';?>
+                        <?php echo $data;?>
                     </div>
                     <?php endfor;?>
                 </div>

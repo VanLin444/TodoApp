@@ -147,10 +147,15 @@ h4 {
 }
 
 .chkbox {
-    accent-color: green;
     width: 20px;
     height: 20px;
     margin-left: 15px;
+}
+
+/* Зачёркивание выполненной задачи*/
+input[type=checkbox]:checked + p{
+    text-decoration: line-through;
+    color:  #666666;
 }
 
 @media(max-width:500px){

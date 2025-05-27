@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +13,7 @@
 <body>
     <div class="wrapper">
         <div class="logo">
-            <img src="logo.png" alt="">
+            <img src="img/logo.png" alt="">
             <div>
                 <h1>ToDoApp</h1>
                 <h4>"Today we do this!"</h4>
@@ -18,7 +21,7 @@
         </div>
         <div class="field-input">
             <input type="text" id="taskTxt" placeholder="Add task...">
-            <button id="addTaskBtn" class="addTaskBtn"><img src="add.png" alt="Добавить задачу"></button>
+            <button id="addTaskBtn" class="addTaskBtn"><img src="img/add.png" alt="Добавить задачу"></button>
         </div>
         <div class="field-tab">
             <div class="tab-links">
@@ -29,11 +32,9 @@
             <div class="tab-content">
                 <div id="All" class="tabcontent">
                     <?php include_once "./php/data.php";?>
-                    <?php for ($i = 0; $i < 40; $i++): ?>
                     <div class="content">
                         <?php echo $data;?>
-                    </div>
-                    <?php endfor;?>
+                    </div>  
                 </div>
 
                 <div id="Active" class="tabcontent">
@@ -51,6 +52,7 @@
 </body>
 <script src="./js/openTab.js"></script>
 <script src="./js/addTask.js"></script>
+<script src="./js/completeTask.js"></script>
 <footer>
     <a href="https://github.com/VanLin444">My Github</a>
 </footer>

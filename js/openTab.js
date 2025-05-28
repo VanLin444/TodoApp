@@ -1,4 +1,4 @@
-function openTab(evt, cityName) {
+function openTab(evt, currentTab) {
     // Объявление переменных
     var i, tabcontent, tablinks;
 
@@ -15,8 +15,22 @@ function openTab(evt, cityName) {
     }
 
     // Показать текущую вкладку и добавить класс "active" к кнопке, которая открыла вкладку
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(currentTab).style.display = "block";
     evt.currentTarget.className += " active";
+
+    $.ajax({
+        url: './php/data.php', // Указываем URL обработчика
+        type: 'POST', // Метод отправки данных
+        data: {
+            curtab: currentTab
+        },
+        success: function(response) {
+            $('#response').html(response); // Выводим ответ от сервера
+        },
+        error: function(xhr, status, error) {
+            $('#response').html('Произошла ошибка: ' + error);
+        }
+    });
 }
 
 // Получаем элемент с id="defaultOpen" и нажимаем на него

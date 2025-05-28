@@ -1,9 +1,8 @@
 function toggleCheckbox(element){
-    console.log("Нажат чекбокс " + element);
     // Чекбокс можно активировать только один раз, после этого он становится неактивным
     $('#chk' + element).attr('disabled',!this.checked);
     $.ajax({
-        url: 'php/complete_task.php', // Указываем URL обработчика
+        url: './php/complete_task.php', // Указываем URL обработчика
         type: 'POST', // Метод отправки данных
         data: {
             complete: element
@@ -15,4 +14,6 @@ function toggleCheckbox(element){
             $('#response').html('Произошла ошибка: ' + error);
         }
     });
+    // Проверка вывода
+    console.log(element);
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
     session_start();
 ?>
 <!DOCTYPE html>
@@ -31,20 +31,19 @@
             </div>
             <div class="tab-content">
                 <div id="All" class="tabcontent">
-                    <?php include_once "./php/data.php";?>
                     <div class="content">
-                        <?php echo $data;?>
+                        <?php echo $_SESSION['data'];?>
                     </div>  
                 </div>
 
                 <div id="Active" class="tabcontent">
-                    <h3>Paris</h3>
-                    <p>Paris is the capital of France.</p>
+                    <div class="content">
+                        <?php echo $_SESSION['data'];?>
+                    </div>  
                 </div>
 
                 <div id="Completed" class="tabcontent">
-                    <h3>Tokyo</h3>
-                    <p>Tokyo is the capital of Japan.ssssss ssssss ssss sss ssssss sssss ssss sssssss sssssssssss sssssssssss sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
+                    <?php echo $_SESSION['data'];?>
                 </div>
             </div>
         </div>

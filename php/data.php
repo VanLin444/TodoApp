@@ -1,15 +1,29 @@
 <?php
-include_once "./php/config.php";
+session_start();
+include_once "config.php";
 // Получаем данные с БД и сортируем их, чтобы вначале выводились активные задачи, а законченные в конце.
-$query = "SELECT task, status FROM `tasks` ORDER BY status";
-$sql = mysqli_query($conn, $query) or die();
+//$query = "SELECT task, status FROM `tasks` ORDER BY status";
+$data = '';
+if ($_POST['curtab'] == 'All'){
+    $tab = "";
+} elseif($_POST['curtab'] == 'Active'){
+    $tab = "WHERE status = 'Active'";
+} elseif ($_POST['curtab'] == 'Completed'){
+    $tab = "WHERE status = 'Completed'";
+}
+$query = "SELECT id, task, status FROM `tasks` {$tab}";
+
+$sql = mysqli_query($conn, $query) or die(
+    "Ошибка MySQL: " . mysqli_error($conn) . 
+    " | Запрос: " . htmlspecialchars($query)
+);
 $id = 1;
 while($row = mysqli_fetch_assoc($sql)){
     // Выполненные задачи становятся неактивными
     $sts = $row['status'] == "Completed" ? 'disabled checked' : '';
     // Вывод задач
-    $data .= "<div class='task' id=$id>
-                    <input type='checkbox' {$sts} class='chkbox' onchange='toggleCheckbox($id)' id='chk{$id}'>
+    $data .= "<div class='task'>
+                    <input type='checkbox' {$sts} class='chkbox' onchange='toggleCheckbox({$row['id']})' id='chk{$id}'>
                     <p>{$row['task']}</p>
                     <div class='taskbtn'>
                         <button class='changebtn'>
@@ -22,3 +36,5 @@ while($row = mysqli_fetch_assoc($sql)){
                 </div>";
     $id++;
 }
+$_SESSION['data'] = $data;
+?>

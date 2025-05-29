@@ -32,18 +32,18 @@
             <div class="tab-content">
                 <div id="All" class="tabcontent">
                     <div class="content">
-                        <?php echo $_SESSION['data'];?>
+                        <?php echo $_SESSION['dataAll'];?>
                     </div>  
                 </div>
 
                 <div id="Active" class="tabcontent">
                     <div class="content">
-                        <?php echo $_SESSION['data'];?>
+                        <?php echo $_SESSION['dataActive'];?>   
                     </div>  
                 </div>
 
                 <div id="Completed" class="tabcontent">
-                    <?php echo $_SESSION['data'];?>
+                    <?php echo $_SESSION['dataCompleted'];?>
                 </div>
             </div>
         </div>
@@ -52,6 +52,7 @@
 <script src="./js/openTab.js"></script>
 <script src="./js/addTask.js"></script>
 <script src="./js/completeTask.js"></script>
+<script src="./js/dataUpdate.js"></script>
 <footer>
     <a href="https://github.com/VanLin444">My Github</a>
 </footer>

@@ -36,5 +36,5 @@ while($row = mysqli_fetch_assoc($sql)){
                 </div>";
     $id++;
 }
-$_SESSION['data'] = $data;
+$_SESSION['data' . $_POST['curtab']] = $data;
 ?>

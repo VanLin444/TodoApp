@@ -1,13 +1,9 @@
-// Обработчик клика на кнопку
-$('#addTaskBtn').on('click', function() {
-    // Собираем данные из полей ввода
-    var taskTxt = $('#taskTxt').val();
-    // Отправляем данные через AJAX
+function deleteTask(id){
     $.ajax({
-        url: 'php/insert_task.php', // Указываем URL обработчика
+        url: 'php/delete_task.php', // Указываем URL обработчика
         type: 'POST', // Метод отправки данных
         data: {
-            taskTxt: taskTxt
+            deleteTask: id
         },
         success: function(response) {
             currentTab = document.querySelector(".active").value; // Определяем текущую активную кнопку
@@ -17,4 +13,4 @@ $('#addTaskBtn').on('click', function() {
             $('#response').html('Произошла ошибка: ' + error); // Удалить
         }
     });
-});
+}

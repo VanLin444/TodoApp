@@ -25,34 +25,31 @@
         </div>
         <div class="field-tab">
             <div class="tab-links">
-                <button class="tablinks" onclick="openTab(event, 'All')" id="defaultOpen">All</button>
-                <button class="tablinks" onclick="openTab(event, 'Active')">Active</button>
-                <button class="tablinks" onclick="openTab(event, 'Completed')">Completed</button>
+                <button class="tablinks" onclick="openTab(event, 'All')" id="defaultOpen" value='All'>All</button>
+                <button class="tablinks" onclick="openTab(event, 'Active')" value='Active'>Active</button>
+                <button class="tablinks" onclick="openTab(event, 'Completed')" value='Completed'>Completed</button>
             </div>
-            <div class="tab-content">
+            <div class="tab-content" id=tab-content>
                 <div id="All" class="tabcontent">
-                    <div class="content">
-                        <?php echo $_SESSION['dataAll'];?>
-                    </div>  
+                    <div class="content" id='contentAll'></div>  
                 </div>
 
                 <div id="Active" class="tabcontent">
-                    <div class="content">
-                        <?php echo $_SESSION['dataActive'];?>   
-                    </div>  
+                    <div class="content" id='contentActive'></div>  
                 </div>
 
                 <div id="Completed" class="tabcontent">
-                    <?php echo $_SESSION['dataCompleted'];?>
+                    <div class="content" id='contentCompleted'></div>  
                 </div>
             </div>
         </div>
     </div>
 </body>
+<script src="./js/dataUpdate.js"></script>
 <script src="./js/openTab.js"></script>
 <script src="./js/addTask.js"></script>
 <script src="./js/completeTask.js"></script>
-<script src="./js/dataUpdate.js"></script>
+<script src="./js/deleteTask.js"></script>
 <footer>
     <a href="https://github.com/VanLin444">My Github</a>
 </footer>

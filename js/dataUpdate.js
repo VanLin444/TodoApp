@@ -1,15 +1,16 @@
-function dataUpdate(){
+function dataUpdate(currentTab){
     $.ajax({
         url: './php/data.php', // Указываем URL обработчика
         type: 'POST', // Метод отправки данных
         data: {
-            
+            curtab: currentTab
         },
-        success: function(response) {
-            $('#response').html(response); // Выводим ответ от сервера
+        success: function(data) {
+            //console.log(data); // Удалить
+            document.getElementById('content' + currentTab).innerHTML = data;
         },
         error: function(xhr, status, error) {
-            $('#response').html('Произошла ошибка: ' + error);
+            $('#response').html('Произошла ошибка: ' + error); // Удалить
         }
     });
 }

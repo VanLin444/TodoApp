@@ -26,7 +26,7 @@ while($row = mysqli_fetch_assoc($sql)){
                     <input type='checkbox' {$sts} class='chkbox' onchange='toggleCheckbox({$row['id']})' id='chk{$id}'>
                     <p>{$row['task']}</p>
                     <div class='taskbtn'>
-                        <button class='changebtn'>
+                        <button class='changebtn' onclick='deleteTask({$id})'>
                             <img src='img/change.png' alt='Изменить задачу'>
                         </button>
                         <button class='deletebtn'>
@@ -36,5 +36,9 @@ while($row = mysqli_fetch_assoc($sql)){
                 </div>";
     $id++;
 }
-$_SESSION['data' . $_POST['curtab']] = $data;
+echo $data;
+// $_SESSION['data' . $_POST['curtab']] = $data;
+/* echo json_encode([
+    'data' . $_POST['curtab'] => $data
+]); */
 ?>

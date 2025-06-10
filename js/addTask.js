@@ -2,6 +2,8 @@
 $('#addTaskBtn').on('click', function() {
     // Собираем данные из полей ввода
     var taskTxt = $('#taskTxt').val();
+    // Очищение поля ввода
+    document.getElementById('taskTxt').value = '';
     // Отправляем данные через AJAX
     $.ajax({
         url: 'php/insert_task.php', // Указываем URL обработчика

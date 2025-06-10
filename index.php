@@ -50,6 +50,7 @@
 <script src="./js/addTask.js"></script>
 <script src="./js/completeTask.js"></script>
 <script src="./js/deleteTask.js"></script>
+<script src="./js/changeTask.js"></script>
 <footer>
     <a href="https://github.com/VanLin444">My Github</a>
 </footer>

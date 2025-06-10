@@ -8,12 +8,11 @@ function toggleCheckbox(element){
             complete: element
         },
         success: function(response) {
-            $('#response').html(response); // Выводим ответ от сервера
+            currentTab = document.querySelector(".active").value; // Определяем текущую активную кнопку
+            dataUpdate(currentTab); // Обновляем данные во вкладке которую нажали, и подгружаем нужные данные
         },
         error: function(xhr, status, error) {
             $('#response').html('Произошла ошибка: ' + error);
         }
     });
-    // Проверка вывода
-    console.log(element);
 }

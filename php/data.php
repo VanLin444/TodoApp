@@ -2,10 +2,9 @@
 session_start();
 include_once "config.php";
 // Получаем данные с БД и сортируем их, чтобы вначале выводились активные задачи, а законченные в конце.
-//$query = "SELECT task, status FROM `tasks` ORDER BY status";
 $data = '';
 if ($_POST['curtab'] == 'All'){
-    $tab = "";
+    $tab = "ORDER BY status";
 } elseif($_POST['curtab'] == 'Active'){
     $tab = "WHERE status = 'Active'";
 } elseif ($_POST['curtab'] == 'Completed'){
@@ -17,28 +16,22 @@ $sql = mysqli_query($conn, $query) or die(
     "Ошибка MySQL: " . mysqli_error($conn) . 
     " | Запрос: " . htmlspecialchars($query)
 );
-$id = 1;
 while($row = mysqli_fetch_assoc($sql)){
     // Выполненные задачи становятся неактивными
     $sts = $row['status'] == "Completed" ? 'disabled checked' : '';
     // Вывод задач
     $data .= "<div class='task'>
-                    <input type='checkbox' {$sts} class='chkbox' onchange='toggleCheckbox({$row['id']})' id='chk{$id}'>
-                    <p>{$row['task']}</p>
+                    <input type='checkbox' {$sts} class='chkbox' onchange='toggleCheckbox({$row['id']})' id='chk{$row['id']}'>
+                    <p id='txt{$row['id']}'>{$row['task']}</p>
                     <div class='taskbtn'>
-                        <button class='changebtn' onclick='deleteTask({$id})'>
-                            <img src='img/change.png' alt='Изменить задачу'>
+                        <button class='changebtn'>
+                            <img src='img/change.png' onclick='changeTask({$row['id']})' alt='Изменить задачу'>
                         </button>
-                        <button class='deletebtn'>
+                        <button class='deletebtn' onclick='deleteTask({$row['id']})'>
                             <img src='img/delete.png' alt='Удалить задачу'>
                         </button>
                     </div>
                 </div>";
-    $id++;
 }
 echo $data;
-// $_SESSION['data' . $_POST['curtab']] = $data;
-/* echo json_encode([
-    'data' . $_POST['curtab'] => $data
-]); */
 ?>

@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once "config.php";
 // Получаем данные с БД и сортируем их, чтобы вначале выводились активные задачи, а законченные в конце.
 $data = '';
@@ -19,10 +18,12 @@ $sql = mysqli_query($conn, $query) or die(
 while($row = mysqli_fetch_assoc($sql)){
     // Выполненные задачи становятся неактивными
     $sts = $row['status'] == "Completed" ? 'disabled checked' : '';
+    // Преобразовывает специальные символы в HTML-сущности и защищает от некорректного ввода
+    $task = htmlspecialchars($row['task']);
     // Вывод задач
     $data .= "<div class='task'>
                     <input type='checkbox' {$sts} class='chkbox' onchange='toggleCheckbox({$row['id']})' id='chk{$row['id']}'>
-                    <p id='txt{$row['id']}'>{$row['task']}</p>
+                    <p id='txt{$row['id']}'>$task</p>
                     <div class='taskbtn'>
                         <button class='changebtn'>
                             <img src='img/change.png' onclick='changeTask({$row['id']})' alt='Изменить задачу'>

@@ -1,6 +1,3 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href = "styles.css">
+    <link rel="icon" type="image/png" href="img/site_icon.png">
     <title>ToDoApp</title>
 </head>
 <body>
@@ -20,9 +18,10 @@
             </div>
         </div>
         <div class="field-input">
-            <input type="text" id="taskTxt" placeholder="Add task...">
+            <input type="text" id="taskTxt" placeholder="Text of the task...">
             <button id="addTaskBtn" class="addTaskBtn"><img src="img/add.png" alt="Добавить задачу"></button>
         </div>
+        <div class="info" id="info"></div>
         <div class="field-tab">
             <div class="tab-links">
                 <button class="tablinks" onclick="openTab(event, 'All')" id="defaultOpen" value='All'>All</button>

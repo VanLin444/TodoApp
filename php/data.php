@@ -11,7 +11,8 @@ if ($_POST['curtab'] == 'All'){
 }
 $query = "SELECT id, task, status FROM `tasks` {$tab}";
 
-$sql = mysqli_query($conn, $query) or die(
+// Запрос к БД
+$sql = mysqli_query($conn, $query) or die( 
     "Ошибка MySQL: " . mysqli_error($conn) . 
     " | Запрос: " . htmlspecialchars($query)
 );

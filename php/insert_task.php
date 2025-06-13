@@ -1,19 +1,19 @@
 <?php
 require_once "config.php";
-// Проверяем, были ли отправлены данные нужным методом
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Получаем данные из POST-запроса обработав их
-    $task = htmlspecialchars($_POST['taskTxt']);
 
-    // Проверяем, что данные не пустые
-    if (!empty($task)) {
-        $status = "Active";
-        // Добавляем задачу в БД
-        $sql = mysqli_query($conn, "INSERT INTO tasks (task, status) VALUES ('$task', '$status')") or die();
-        echo "Задача добавлена!";
-    } else {
-        echo "Добавьте задачу!";
-    }
+// Получаем данные из POST-запроса обработав их
+$task = htmlspecialchars($_POST['taskTxt']);
+
+// Проверяем, что данные не пустые
+if (!empty($task)) {
+    $status = "Active";
+    // Добавляем задачу в БД
+    $query = "INSERT INTO tasks (task, status) VALUES ('$task', '$status')";
+    $sql = mysqli_query($conn, $query) or die(
+        "Ошибка MySQL: " . mysqli_error($conn) . 
+        " | Запрос: " . htmlspecialchars($query)
+    );
+    echo "Задача добавлена!";
 } else {
-    echo "Неверный метод запроса!";
+    echo "Добавьте задачу!";
 }

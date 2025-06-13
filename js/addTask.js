@@ -1,5 +1,5 @@
 // Обработчик клика на кнопку добавления задач
-$('#addTaskBtn').on('click', function() {
+function addTask() {
     // Получения значения из поля ввода
     var taskTxt = $('#taskTxt').val();
     // Очистка поля ввода
@@ -14,17 +14,10 @@ $('#addTaskBtn').on('click', function() {
         success: function(response) {
             currentTab = $(".active").val(); // Определяем текущую активную вкладку
             dataUpdate(currentTab); // Обновляем данные во вкладке которую нажали, и подгружаем нужные данные
-            // Вывод проблем и ошибок
-            //Делаем видимым
-            const info = document.querySelector('#info');
-            info.style.display = "flex";
-            info.classList.add('error');
-            $('#info').html(`<p>${response}</p>`);
-            info.scrollTop = 0;
-            $("#info").delay(5000).slideUp(300);
+            infoOutput(response);
         },
         error: function(error) {
-            $('#info').html(`<p>Произошла ошибка: ${error}</p>`); // Удалить
+            $('#info').html(`<p>Произошла ошибка: ${error}</p>`);
         }
     });
-});
+}

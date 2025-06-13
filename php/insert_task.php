@@ -2,7 +2,7 @@
 require_once "config.php";
 // Проверяем, были ли отправлены данные нужным методом
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Получаем данные из POST-запроса
+    // Получаем данные из POST-запроса обработав их
     $task = htmlspecialchars($_POST['taskTxt']);
 
     // Проверяем, что данные не пустые

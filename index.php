@@ -19,7 +19,7 @@
         </div>
         <div class="field-input">
             <input type="text" id="taskTxt" placeholder="Text of the task...">
-            <button id="addTaskBtn" class="addTaskBtn"><img src="img/add.png" alt="Добавить задачу"></button>
+            <button id="addTaskBtn" class="addTaskBtn" onclick="addTask()"><img src="img/add.png" alt="Добавить задачу"></button>
         </div>
         <div class="info" id="info"></div>
         <div class="field-tab">
@@ -50,6 +50,7 @@
 <script src="./js/completeTask.js"></script>
 <script src="./js/deleteTask.js"></script>
 <script src="./js/changeTask.js"></script>
+<script src="./js/infoOutput.js"></script>
 <footer>
     <a href="https://github.com/VanLin444">My Github</a>
 </footer>

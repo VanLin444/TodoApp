@@ -6,11 +6,11 @@ function dataUpdate(currentTab){
             curtab: currentTab
         },
         success: function(data) {
-            //console.log(data); // Удалить
+            // Вывод данных в соответствующем окне
             document.getElementById('content' + currentTab).innerHTML = data;
         },
-        error: function(xhr, status, error) {
-            $('#response').html('Произошла ошибка: ' + error); // Удалить
+        error: function(error) {
+            $('#info').html('Произошла ошибка: ' + error);
         }
     });
 }

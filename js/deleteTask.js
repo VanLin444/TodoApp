@@ -8,9 +8,10 @@ function deleteTask(id){
         success: function(response) {
             currentTab = document.querySelector(".active").value; // Определяем текущую активную кнопку
             dataUpdate(currentTab); // Обновляем данные во вкладке которую нажали, и подгружаем нужные данные
+            infoOutput(response);
         },
-        error: function(xhr, status, error) {
-            $('#response').html('Произошла ошибка: ' + error); // Удалить
+        error: function(error) {
+            $('#info').html('Произошла ошибка: ' + error);
         }
     });
 }

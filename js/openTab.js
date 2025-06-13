@@ -21,5 +21,5 @@ function openTab(evt, currentTab) {
     dataUpdate(currentTab); // Обновляем данные во вкладке которую нажали, и подгружаем нужные данные
 }
 
-// Получаем элемент с id="defaultOpen" и нажимаем на него
+// Устанавливаем вкладку по умолчанию
 document.getElementById("defaultOpen").click();

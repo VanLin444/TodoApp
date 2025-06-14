@@ -13,6 +13,7 @@ if (!empty($task)) {
         "Ошибка MySQL: " . mysqli_error($conn) . 
         " | Запрос: " . htmlspecialchars($query)
     );
+    mysqli_close($conn); 
     echo "Задача добавлена!";
 } else {
     echo "Добавьте задачу!";

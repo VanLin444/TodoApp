@@ -1,6 +1,6 @@
 <?php
 include_once "config.php";
-// Получаем данные с БД и сортируем их, чтобы вначале выводились активные задачи, а законченные в конце.
+// Определяем какие данные нужно получить для текущей вкладки
 $data = '';
 if ($_POST['curtab'] == 'All'){
     $tab = "ORDER BY status";
@@ -9,6 +9,7 @@ if ($_POST['curtab'] == 'All'){
 } elseif ($_POST['curtab'] == 'Completed'){
     $tab = "WHERE status = 'Completed'";
 }
+// Составляем текст запроса
 $query = "SELECT id, task, status FROM `tasks` {$tab}";
 
 // Запрос к БД
@@ -16,6 +17,9 @@ $sql = mysqli_query($conn, $query) or die(
     "Ошибка MySQL: " . mysqli_error($conn) . 
     " | Запрос: " . htmlspecialchars($query)
 );
+mysqli_close($conn); 
+
+// Построчно разбираем ответ от БД
 while($row = mysqli_fetch_assoc($sql)){
     // Выполненные задачи становятся неактивными
     $sts = $row['status'] == "Completed" ? 'disabled checked' : '';

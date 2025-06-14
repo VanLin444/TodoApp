@@ -52,6 +52,6 @@
 <script src="./js/changeTask.js"></script>
 <script src="./js/infoOutput.js"></script>
 <footer>
-    <a href="https://github.com/VanLin444" target="_blank">My Github</a>
+    <a href="https://github.com/VanLin444" target="_blank">My GitHub</a>
 </footer>
 </html>

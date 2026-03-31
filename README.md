@@ -15,4 +15,4 @@ ToDoApp - это простое веб-приложение для управл�
   - База данных: MySQL
   - Библиотеки: jQuery 3.6.0
 
-Реализация проекта : <http://todoapp.sovagithub.beget.tech/>
+Реализация проекта : <http://sovaprojects.tech/TodoApp>

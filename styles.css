@@ -5,6 +5,10 @@ body {
     min-height: 100vh;
     align-items: center;
     justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .wrapper {
@@ -83,6 +87,7 @@ h4 {
 
 .tab-links button {
     background-color: inherit;
+    font-family: "Montserrat", sans-serif;
     float: left;
     border: none;
     outline: none;
@@ -220,6 +225,10 @@ input[type=checkbox]:checked+p {
     max-height: 100%;
 }
 
+#taskTxt::placeholder {
+    font-family: "Montserrat", sans-serif;
+}
+
 @keyframes fadeEffect {
     from {
         opacity: 0;
@@ -231,14 +240,26 @@ input[type=checkbox]:checked+p {
 }
 
 @media(max-width:500px) {
+    body , .tab-links button {
+        font-size: clamp(8px, 4.5vw, 16px);
+    }
+
     .wrapper {
         width: auto;
         height: auto;
-        font-size: clamp(15px, 2vw, 30px);
     }
 
     .tab-links {
         display: flex;
         flex-direction: column;
+    }
+
+    .taskbtn {
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    * {
+        border: 1px solid red;
     }
 }

@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href = "styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="img/site_icon.png">
     <title>ToDoApp</title>
 </head>
+
 <body>
     <div class="wrapper">
         <div class="logo">
@@ -30,15 +35,15 @@
             </div>
             <div class="tab-content" id=tab-content>
                 <div id="All" class="tabcontent">
-                    <div class="content" id='contentAll'></div>  
+                    <div class="content" id='contentAll'></div>
                 </div>
 
                 <div id="Active" class="tabcontent">
-                    <div class="content" id='contentActive'></div>  
+                    <div class="content" id='contentActive'></div>
                 </div>
 
                 <div id="Completed" class="tabcontent">
-                    <div class="content" id='contentCompleted'></div>  
+                    <div class="content" id='contentCompleted'></div>
                 </div>
             </div>
         </div>
@@ -54,4 +59,5 @@
 <footer>
     <a href="https://github.com/VanLin444" target="_blank">My GitHub</a>
 </footer>
+
 </html>

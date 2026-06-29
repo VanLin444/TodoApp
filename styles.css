@@ -6,13 +6,14 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .wrapper {
     width: 500px;
     height: 600px;
     background-color: #ffffff;
     padding-bottom: 2vh;
     border-radius: 7px;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,18 +22,24 @@ body {
 
 .logo {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     justify-content: center;
-    box-sizing:border-box;
+    box-sizing: border-box;
     margin-bottom: 1vh;
+    margin-top: 15px;
 }
 
-.logo img{
-    width: 20%;
+.logo img {
+    width: 35%;
+    height: auto;
+    display: block;
+    max-width: 150px;
 }
 
-h1, h4 {
-    text-align:center;
+h1,
+h4 {
+    text-align: center;
+    word-break: break-all;
 }
 
 h1 {
@@ -46,6 +53,7 @@ h4 {
 .field-input {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin-bottom: 1vh;
     width: 90%;
 }
@@ -54,6 +62,8 @@ h4 {
     width: 80%;
     height: 35px;
     padding-left: 1vh;
+    border-radius: 8px;
+    border: 1px solid black;
 }
 
 .field-tab {
@@ -114,7 +124,7 @@ h4 {
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
-    background-color:#f1f1f1;
+    background-color: #f1f1f1;
     margin-bottom: 1vh;
     align-items: center;
 }
@@ -132,26 +142,34 @@ h4 {
     width: 25%;
 }
 
-.deletebtn, .changebtn, .addTaskBtn {
-    background: none; 
-    border: none;     
-    padding: 0;       
+.deletebtn,
+.changebtn,
+.addTaskBtn {
+    display: flex;
+    background: none;
+    border: none;
+    padding: 0;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
 }
 
-.addTaskBtn img{
+.addTaskBtn img {
     width: 65%;
-    object-fit: cover;  
+    object-fit: cover;
     height: auto;
 }
 
-.changebtn img, .deletebtn img{
+.changebtn img,
+.deletebtn img {
     max-width: 16px;
     max-height: 16px;
 }
 
 /* Прожатие кнопок*/
-.addTaskBtn:active, .deletebtn:active, .changebtn:active {
+.addTaskBtn:active,
+.deletebtn:active,
+.changebtn:active {
     transform: scale(0.95);
 }
 
@@ -162,13 +180,13 @@ h4 {
 }
 
 /* Зачёркивание выполненной задачи*/
-input[type=checkbox]:checked + p{
+input[type=checkbox]:checked+p {
     text-decoration: line-through;
-    color:  #666666;
+    color: #666666;
 }
 
 /* Наведение на задачу */
-.task:hover{
+.task:hover {
     background-color: #404040;
     color: #e6e6e6;
 }
@@ -203,17 +221,24 @@ input[type=checkbox]:checked + p{
 }
 
 @keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
-@media(max-width:500px){
+@media(max-width:500px) {
     .wrapper {
         width: auto;
         height: auto;
+        font-size: clamp(15px, 2vw, 30px);
     }
+
     .tab-links {
         display: flex;
         flex-direction: column;
     }
-} 
+}

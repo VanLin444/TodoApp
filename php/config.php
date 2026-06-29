@@ -3,7 +3,6 @@
     $dbUsername = 'root';
     $dbPassword = 'root';
     $dbName = 'todoapp';
-    $dbPort = '3306';
 
     mysqli_report(MYSQLI_REPORT_OFF);
 

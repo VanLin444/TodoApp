@@ -24,7 +24,7 @@
         </div>
         <div class="field-input">
             <input type="text" id="taskTxt" placeholder="Text of the task...">
-            <button id="addTaskBtn" class="addTaskBtn" onclick="addTask()"><img src="img/add.png" alt="Добавить задачу"></button>
+            <button id="addTaskBtn" class="addTaskBtn" onclick="addTask()">+</button>
         </div>
         <div class="info" id="info"></div>
         <div class="field-tab">

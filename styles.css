@@ -65,8 +65,23 @@ h4 {
 .field-input input {
     width: 80%;
     height: 35px;
-    padding-left: 1vh;
-    border-radius: 8px;
+    padding: 0 1vh;
+    border-radius: 6px;
+    border: 1px solid black;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.field-input button {
+    font-family: inherit;
+    box-sizing: border-box;
+    width: 15%;
+    font-size: 25px;
+    height: 35px;
+    border-radius: 6px;
+    background: #111;
+    color: #ffffff;
+    cursor: pointer;
     border: 1px solid black;
 }
 
@@ -87,7 +102,7 @@ h4 {
 
 .tab-links button {
     background-color: inherit;
-    font-family: "Montserrat", sans-serif;
+    font-family: inherit;
     float: left;
     border: none;
     outline: none;
@@ -148,8 +163,7 @@ h4 {
 }
 
 .deletebtn,
-.changebtn,
-.addTaskBtn {
+.changebtn {
     display: flex;
     background: none;
     border: none;
@@ -157,12 +171,6 @@ h4 {
     cursor: pointer;
     align-items: center;
     justify-content: center;
-}
-
-.addTaskBtn img {
-    width: 65%;
-    object-fit: cover;
-    height: auto;
 }
 
 .changebtn img,
@@ -199,7 +207,7 @@ input[type=checkbox]:checked+p {
 /* Поле вывода информации */
 .info {
     border: 1px solid black;
-    background-color: #8680e5;
+    background-color: #adc9fd;
     margin-bottom: 1vh;
     width: 75%;
     min-height: 20px;
@@ -213,6 +221,7 @@ input[type=checkbox]:checked+p {
     border-radius: 7px;
     border: none;
     display: none;
+    color: #0047cc;
 }
 
 .info::-webkit-scrollbar {
@@ -240,7 +249,9 @@ input[type=checkbox]:checked+p {
 }
 
 @media(max-width:500px) {
-    body , .tab-links button {
+
+    body,
+    .tab-links button {
         font-size: clamp(8px, 4.5vw, 16px);
     }
 
@@ -257,9 +268,5 @@ input[type=checkbox]:checked+p {
     .taskbtn {
         justify-content: space-between;
         flex-direction: column;
-    }
-
-    * {
-        border: 1px solid red;
     }
 }
